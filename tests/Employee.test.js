@@ -1,5 +1,5 @@
 // This makes sure we include the Employee.js from the lib folder
-const Employee = require("../lib/Employee.");
+const Employee = require("../lib/Employee");
 
 // This function will test the Employee.js file using the jest dependancy
 describe("Employee", () => {
