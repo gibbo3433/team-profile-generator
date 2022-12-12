@@ -28,7 +28,7 @@ describe("Engineer", () => {
       // This will check to see if the values in the 'final' matches what will come out
 
       expect(final.getName()).toEqual(name);
-      expect(final.getID()).toEqual(id);
+      expect(final.getId()).toEqual(id);
       expect(final.getEmail()).toEqual(email);
       expect(final.getGithub()).toEqual(github);
       expect(final.getRole()).toEqual(role);
