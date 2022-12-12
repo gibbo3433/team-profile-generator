@@ -1,7 +1,7 @@
 // Inquirer is the dependacy for making sure we can ask questions
 const inquirer = require('inquirer');
 // This will allow a html builder js file to be attached to this document
-const htmlCreator = require('./htmlCreator');
+const htmlCreator = require('./htmlCreator.js');
 
 // This makes sure to pull in the lib files for each job role
 const Engineer = require('../lib/Engineer');
@@ -49,5 +49,42 @@ const startMainQuestions = () => {
           }
     })
 };
+
+// This starts the process to add an Engineer into the array
+const engineerQuestions = () => {
+    inquirer
+    .prompt(Questions.EngineerQuestions)
+    .then((reponse) => {
+        const engineer = new Engineer(reponse.name, reponse.id, reponse.email, reponse.github)
+        Engineer.push(engineer);
+        // Returns back to the starter questions if another needs to be added
+        startMainQuestions();
+    })
+};
+
+// This starts the process to add an Intern into the array
+const InternQuestions = () => {
+    inquirer
+    .prompt(Questions.InternQuestions)
+    .then((reponse) => {
+        const intern = new Intern(reponse.name, reponse.id, reponse.email, reponse.school)
+        Intern.push(intern);
+        // Returns back to the starter questions if another needs to be added
+        startMainQuestions();
+    })
+};
+
+// This starts the process to add a manager into the array
+const managerQuestions = () => {
+    inquirer
+    .prompt(Questions.ManagerQuestions)
+    .then((reponse) => {
+        const manager = new Manager(reponse.name, reponse.id, reponse.email, reponse.officeNumber)
+        Manager.push(manager);
+        // Returns back to the starter questions if another needs to be added
+        startMainQuestions();
+    })
+};
+
 
 module.exports = startMainQuestions;
