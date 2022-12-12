@@ -25,23 +25,23 @@ const startMainQuestions = () => {
         // Depending on what the user chooses, the correct questions will be output for them to answer
         switch(reponse.selection) {
 
-            case 'Add Engineer':
+            case 'Add engineer':
             engineerQuestions()
 
             break;
 
-            case 'Add Intern':
+            case 'Add intern':
             InternQuestions()
 
             break;
 
-            case 'Add Manager':
+            case 'Add manager':
             managerQuestions()
 
             break;
             
             // This will build the team page
-            case 'Build Team Page':
+            case 'Create team HTML page':
 
             // This takes the now filled arrays and places them into the htmlCreator
             htmlCreator(engineers, interns, managers);

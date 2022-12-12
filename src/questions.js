@@ -3,7 +3,7 @@ const starterQuestions =[
     {   type: 'list',
         message: 'What do you want to do?',
         name: 'selection',
-        choices: ['Add an engineer', 'Add an intern', 'Add a manager', 'Create team HTML page'],
+        choices: ['Add engineer', 'Add intern', 'Add manager', 'Create team HTML page'],
       },
 ];
 
