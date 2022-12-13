@@ -11,7 +11,7 @@ const Manager = require('../lib/Manager');
 const htmlCreator = (engineers, interns, managers) => {
 
     // This makes syncs the data so that the template literals can be added below
-    let createcards = fs.readFileSync("./temp.index.html", 'utf8')
+    let createcards = fs.readFileSync('./temp/index.html', 'utf8')
 
     // This for loops make sure that all parts of the array are added for each type of employee
     if (createcards) {
@@ -21,15 +21,11 @@ const htmlCreator = (engineers, interns, managers) => {
         engineers.forEach(engineer => {
             engineerscard += 
             `<div class="card">
-                <div class="card-header">
-                    <h2>${engineer.name}</h2>
-                </div>
-                <div class="card-info">
-                    <p>Employee ID: ${engineer.id} </p>
-                    <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p>GitHub: <a href="https://github.com/${engineer.github}">@${engineer.github}</a></p>
-                </div>
-             </div>`
+                <h2>${engineer.name}</h2>              
+                <p>Employee ID: ${engineer.id} </p>
+                <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p>GitHub: <a href="https://github.com/${engineer.github}">@${engineer.github}</a></p>
+            </div>`
         })
 
         // This is where the intern cards will be added and how they will look
@@ -37,15 +33,11 @@ const htmlCreator = (engineers, interns, managers) => {
         interns.forEach(intern => {
             internscard += 
             `<div class="card">
-                <div class="card-header">
-                    <h2>${intern.name}</h2>
-                </div>
-                <div class="card-info">
-                    <p>Employee ID: ${intern.id} </p>
-                    <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                    <p>School: ${intern.school}</p>                    
-                </div>
-             </div>`
+                <h2>${intern.name}</h2>
+                <p>Employee ID: ${intern.id} </p>
+                <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p>School: ${intern.school}</p>                    
+            </div>`
         })
 
         // This is where the manager cards will be added and how they will look
@@ -53,20 +45,20 @@ const htmlCreator = (engineers, interns, managers) => {
         managers.forEach(manager => {
             managerscard += 
             `<div class="card">
-                <div class="card-header">
-                    <h2>${manager.name}</h2>
-                </div>
-                <div class="card-info">
-                    <p>Employee ID: ${manager.id} </p>
-                    <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                    <p>Office Number: ${manager.officeNumber}</p>                    
-                </div>
+                <h2>${manager.name}</h2>
+                <p>Employee ID: ${manager.id} </p>
+                <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p>Office Number: ${manager.officeNumber}</p>                    
              </div>`
         })
 
+        //replace the placeholders in the temp file with the newly created cards
+        createcards = createcards.replace('<!--engineercards-->', engineerscard);
+        createcards = createcards.replace('<!--interncards-->', internscard);
+        createcards = createcards.replace('<!--managercards-->', managerscard);
 
-
-
+        // write the now final html to the dist folder where the new file will be created
+        fs.writeFileSync('./dist/team.html', createcards, 'utf8');
 
     }
 
