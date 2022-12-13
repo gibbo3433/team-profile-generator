@@ -16,18 +16,50 @@ const htmlCreator = (engineers, interns, managers) => {
     // This for loops make sure that all parts of the array are added for each type of employee
     if (createcards) {
 
+        // This is where the engineer cards will be added and how they will look
         let engineerscard = '';
         engineers.forEach(engineer => {
-            managerInfo += 
-            `<div class="box">
-                <div class="box-header">
+            engineerscard += 
+            `<div class="card">
+                <div class="card-header">
                     <h2>${engineer.name}</h2>
-                    <h3><span class="fa-solid fa-user-tie"></span> Manager</h3>
                 </div>
-                <div class="box-info">
-                    <p><b><i>Employee ID:</i></b> ${engineer.id} </p>
-                    <p><b><i>Email:</i></b> <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    
+                <div class="card-info">
+                    <p>Employee ID: ${engineer.id} </p>
+                    <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                    <p>GitHub: <a href="https://github.com/${engineer.github}">@${engineer.github}</a></p>
+                </div>
+             </div>`
+        })
+
+        // This is where the intern cards will be added and how they will look
+        let internscard = '';
+        interns.forEach(intern => {
+            internscard += 
+            `<div class="card">
+                <div class="card-header">
+                    <h2>${intern.name}</h2>
+                </div>
+                <div class="card-info">
+                    <p>Employee ID: ${intern.id} </p>
+                    <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                    <p>School: ${intern.school}</p>                    
+                </div>
+             </div>`
+        })
+
+        // This is where the manager cards will be added and how they will look
+        let managerscard = '';
+        managers.forEach(manager => {
+            managerscard += 
+            `<div class="card">
+                <div class="card-header">
+                    <h2>${manager.name}</h2>
+                </div>
+                <div class="card-info">
+                    <p>Employee ID: ${manager.id} </p>
+                    <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                    <p>Office Number: ${manager.officeNumber}</p>                    
                 </div>
              </div>`
         })
