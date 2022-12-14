@@ -21,7 +21,8 @@ const htmlCreator = (engineers, interns, managers) => {
         engineers.forEach(engineer => {
             engineerscard += 
             `<div class="card">
-                <h2>${engineer.name}</h2>              
+                <h2>${engineer.name}</h2> 
+                <h3> Engineer </h3>              
                 <p>Employee ID: ${engineer.id} </p>
                 <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 <p>GitHub: <a href="https://github.com/${engineer.github}">@${engineer.github}</a></p>
@@ -34,6 +35,7 @@ const htmlCreator = (engineers, interns, managers) => {
             internscard += 
             `<div class="card">
                 <h2>${intern.name}</h2>
+                <h3> Intern </h3> 
                 <p>Employee ID: ${intern.id} </p>
                 <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p>School: ${intern.school}</p>                    
@@ -46,9 +48,10 @@ const htmlCreator = (engineers, interns, managers) => {
             managerscard += 
             `<div class="card">
                 <h2>${manager.name}</h2>
+                <h3> Manager </h3> 
                 <p>Employee ID: ${manager.id} </p>
                 <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p>Office Number: ${manager.officeNumber}</p>                    
+                <p>Office Number: ${manager.officenumber}</p>                    
              </div>`
         })
 

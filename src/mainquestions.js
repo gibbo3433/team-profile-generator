@@ -80,7 +80,7 @@ const managerQuestions = () => {
     inquirer
     .prompt(Questions.ManagerQuestions)
     .then((reponse) => {
-        const manager = new Manager(reponse.name, reponse.id, reponse.email, reponse.officeNumber)
+        const manager = new Manager(reponse.name, reponse.id, reponse.email, reponse.officenumber)
         managers.push(manager);
         // Returns back to the starter questions if another needs to be added
         startMainQuestions();
