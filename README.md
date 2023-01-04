@@ -47,14 +47,14 @@ I gave the wrong link for the readFileSync to find and thus, could not find the 
 
 I have added  Javascript //notes to help any future edits by making it easier to see what the different elements are in the code so that if any collaboration work will be done in the future, it will be easiser to track and change.
 
+## Additional Applications
+
+- Postmaster
+
 ## Video Demonstration
 
 - Link to full video demonstration
-https://drive.google.com/file/d/1KjevNN7KH9qvW0JX7FQfzDgU07-mX-OB/view
-
-## Image of completed Team Profile Generator
-
-![Screenshot 2022-12-14 001516](https://user-images.githubusercontent.com/113479774/207473057-76185c7b-c810-4f1f-a438-aa496befe6ee.jpg)
+#############
 
 ## Link to deployed application
 
